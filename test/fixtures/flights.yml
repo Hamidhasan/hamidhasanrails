@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  departure: MyString
+  departuredate: 2012-02-12 17:22:39
+  arrival: MyString
+  arrivaldate: 2012-02-12 17:22:39
+  passengers: 
+
+two:
+  departure: MyString
+  departuredate: 2012-02-12 17:22:39
+  arrival: MyString
+  arrivaldate: 2012-02-12 17:22:39
+  passengers: 

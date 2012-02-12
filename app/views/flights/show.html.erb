@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Departure:</b>
+  <%= @flight.departure %>
+</p>
+
+<p>
+  <b>Departuredate:</b>
+  <%= @flight.departuredate %>
+</p>
+
+<p>
+  <b>Arrival:</b>
+  <%= @flight.arrival %>
+</p>
+
+<p>
+  <b>Arrivaldate:</b>
+  <%= @flight.arrivaldate %>
+</p>
+
+<p>
+  <b>Passengers:</b>
+  <%= @flight.passengers %>
+</p>
+
+
+<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<%= link_to 'Back', flights_path %>
