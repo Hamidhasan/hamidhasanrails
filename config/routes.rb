@@ -1,9 +1,11 @@
 Hamidhasanrails::Application.routes.draw do  
+  resources :luggages
+
   resources :flights
 
   resources :passengers
 
-  root :to => 'flights#index'
+  root :to => 'passengers#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

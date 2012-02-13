@@ -1,0 +1,27 @@
+<h1>Listing luggages</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Weight</th>
+    <th>Passenger</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @luggages.each do |luggage| %>
+  <tr>
+    <td><%= luggage.description %></td>
+    <td><%= luggage.weight %></td>
+    <td><%= luggage.passenger %></td>
+    <td><%= link_to 'Show', luggage %></td>
+    <td><%= link_to 'Edit', edit_luggage_path(luggage) %></td>
+    <td><%= link_to 'Destroy', luggage, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Luggage', new_luggage_path %>

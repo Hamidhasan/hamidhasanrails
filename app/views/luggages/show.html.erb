@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @luggage.description %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @luggage.weight %>
+</p>
+
+<p>
+  <b>Passenger:</b>
+  <%= @luggage.passenger %>
+</p>
+
+
+<%= link_to 'Edit', edit_luggage_path(@luggage) %> |
+<%= link_to 'Back', luggages_path %>

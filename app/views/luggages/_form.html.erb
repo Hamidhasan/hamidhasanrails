@@ -1,0 +1,29 @@
+<%= form_for(@luggage) do |f| %>
+  <% if @luggage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@luggage.errors.count, "error") %> prohibited this luggage from being saved:</h2>
+
+      <ul>
+      <% @luggage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger %><br />
+    <%= f.text_field :passenger %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
