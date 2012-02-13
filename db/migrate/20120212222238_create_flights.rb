@@ -5,7 +5,7 @@ class CreateFlights < ActiveRecord::Migration
       t.datetime :departuredate
       t.string :arrival
       t.datetime :arrivaldate
-      t.has_many :passengers
+      t.belongs_to :passenger
 
       t.timestamps
     end
