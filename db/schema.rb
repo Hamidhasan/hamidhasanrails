@@ -11,17 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120212222511) do
+ActiveRecord::Schema.define(:version => 20120213035807) do
 
   create_table "flights", :force => true do |t|
-    t.string   "departure"
-    t.datetime "departuredate"
     t.string   "arrival"
-    t.datetime "arrivaldate"
+    t.datetime "arrival_time"
+    t.string   "departure"
+    t.datetime "departure_time"
     t.integer  "passenger_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "flights", ["passenger_id"], :name => "index_flights_on_passenger_id"
 
   create_table "passengers", :force => true do |t|
     t.string   "name"
