@@ -3,7 +3,6 @@ class CreatePassengers < ActiveRecord::Migration
     create_table :passengers do |t|
       t.string :name
       t.string :email
-      t.has_many :flight
 
       t.timestamps
     end
