@@ -1,6 +1,5 @@
 class CreateFlights < ActiveRecord::Migration
   def change
-    drop_table :flights
     create_table :flights do |t|
       t.string :arrival
       t.datetime :arrival_time
