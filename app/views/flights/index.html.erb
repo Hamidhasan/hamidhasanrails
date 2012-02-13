@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <th>Departure</th>
-    <th>Departuredate</th>
     <th>Arrival</th>
-    <th>Arrivaldate</th>
-    <th>Passengers</th>
+    <th>Arrival time</th>
+    <th>Departure</th>
+    <th>Departure time</th>
+    <th>Passenger</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +14,11 @@
 
 <% @flights.each do |flight| %>
   <tr>
-    <td><%= flight.departure %></td>
-    <td><%= flight.departuredate %></td>
     <td><%= flight.arrival %></td>
-    <td><%= flight.arrivaldate %></td>
-    <td><%= flight.passengers %></td>
+    <td><%= flight.arrival_time %></td>
+    <td><%= flight.departure %></td>
+    <td><%= flight.departure_time %></td>
+    <td><%= flight.passenger %></td>
     <td><%= link_to 'Show', flight %></td>
     <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
     <td><%= link_to 'Destroy', flight, confirm: 'Are you sure?', method: :delete %></td>

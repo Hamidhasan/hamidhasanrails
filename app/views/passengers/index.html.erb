@@ -4,7 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Flight</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= passenger.name %></td>
     <td><%= passenger.email %></td>
-    <td><%= passenger.flight %></td>
     <td><%= link_to 'Show', passenger %></td>
     <td><%= link_to 'Edit', edit_passenger_path(passenger) %></td>
     <td><%= link_to 'Destroy', passenger, confirm: 'Are you sure?', method: :delete %></td>

@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :departure %><br />
-    <%= f.text_field :departure %>
-  </div>
-  <div class="field">
-    <%= f.label :departuredate %><br />
-    <%= f.datetime_select :departuredate %>
-  </div>
-  <div class="field">
     <%= f.label :arrival %><br />
     <%= f.text_field :arrival %>
   </div>
   <div class="field">
-    <%= f.label :arrivaldate %><br />
-    <%= f.datetime_select :arrivaldate %>
+    <%= f.label :arrival_time %><br />
+    <%= f.datetime_select :arrival_time %>
   </div>
   <div class="field">
-    <%= f.label :passengers %><br />
-    <%= f.text_field :passengers %>
+    <%= f.label :departure %><br />
+    <%= f.text_field :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_time %><br />
+    <%= f.datetime_select :departure_time %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger %><br />
+    <%= f.text_field :passenger %>
   </div>
   <div class="actions">
     <%= f.submit %>
