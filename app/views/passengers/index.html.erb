@@ -4,6 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Luggages</th>
+    <th>Flights</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +15,17 @@
   <tr>
     <td><%= passenger.name %></td>
     <td><%= passenger.email %></td>
+    
+    <td><% passenger.luggage.each do |luggage| %>
+        <%= link_to luggage.description, luggage %>
+        <%= ", " unless luggage == passenger.luggage.last %>
+        <% end %></td>
+        
+    <td><% passenger.flight.each do |flight| %>
+        <%= link_to flight.departure, flight %>
+        <%= ", " unless flight == passenger.flight.last %>
+        <% end %></td>
+        
     <td><%= link_to 'Show', passenger %></td>
     <td><%= link_to 'Edit', edit_passenger_path(passenger) %></td>
     <td><%= link_to 'Destroy', passenger, confirm: 'Are you sure?', method: :delete %></td>

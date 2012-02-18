@@ -10,6 +10,22 @@
   <%= @passenger.email %>
 </p>
 
+<p>
+  <b>Luggages:</b>
+    <% @passenger.luggage.each do |luggage| %>
+        <%= link_to luggage.description, luggage %>
+        <%= ", " unless luggage == @passenger.luggage.last %>
+        <% end %>
+</p>
+
+<p>
+  <b>Flights:</b>
+    <% @passenger.flight.each do |flight| %>
+        <%= link_to flight.departure, flight %>
+        <%= ", " unless flight == @passenger.flight.last %>
+        <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_passenger_path(@passenger) %> |
 <%= link_to 'Back', passengers_path %>
