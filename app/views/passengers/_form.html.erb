@@ -1,4 +1,4 @@
-<%= form_for(@passenger) do |f| %>
+<%= form_for(@passenger, html: {class: "nice"}) do |f| %>
   <% if @passenger.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@passenger.errors.count, "error") %> prohibited this passenger from being saved:</h2>
