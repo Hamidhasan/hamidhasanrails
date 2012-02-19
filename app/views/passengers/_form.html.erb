@@ -13,24 +13,24 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'input-text' %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'input-text' %>
   </div>
   
   <div class="field">
     <%= f.label :luggage %> <br />
-    <%= f.text_field :luggage %>
+    <%= f.text_field :luggage, class: 'input-text' %>
   </div>
   
   <div class="field">
     <%= f.label :flight %> <br />
-    <%= f.text_field :flight %>
+    <%= f.text_field :flight, class: 'input-text' %>
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'medium nice blue radius button' %>
   </div>
 <% end %>

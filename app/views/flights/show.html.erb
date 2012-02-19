@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Departure:</b>
+  <%= @flight.departure %>
+</p>
+
+<p>
+  <b>Departure time:</b>
+  <%= @flight.departure_time %>
+</p>
+
+<p>
   <b>Arrival:</b>
   <%= @flight.arrival %>
 </p>
@@ -11,13 +21,8 @@
 </p>
 
 <p>
-  <b>Departure:</b>
-  <%= @flight.departure %>
-</p>
-
-<p>
-  <b>Departure time:</b>
-  <%= @flight.departure_time %>
+  <b>Is international?:</b>
+  <%= @flight.isinter %>
 </p>
 
 <p>
