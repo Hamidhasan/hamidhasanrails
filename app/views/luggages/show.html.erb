@@ -17,6 +17,7 @@
 
 <p>
   <b>Passenger:</b>
+  <%= link_to "Create new Passenger", new_passenger_path if @luggage.passenger.empty? %>
   <%= @luggage.passenger.name %>
 </p>
 

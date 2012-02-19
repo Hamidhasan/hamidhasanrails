@@ -16,6 +16,7 @@
         <%= link_to luggage.description, luggage %>
         <%= ", " unless luggage == @passenger.luggage.last %>
         <% end %>
+    <%= link_to "Create new Luggage", new_luggage_path %>
 </p>
 
 <p>
@@ -24,6 +25,7 @@
         <%= link_to flight.departure, flight %>
         <%= ", " unless flight == @passenger.flight.last %>
         <% end %>
+    <%= link_to "Create new Flight", new_flight_path %>
 </p>
 
 
