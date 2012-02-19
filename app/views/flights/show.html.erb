@@ -27,7 +27,7 @@
 
 <p>
   <b>Passenger:</b>
-  <%= link_to "Create new Passenger", new_passenger_path if @flight.passenger.empty? %>
+  <%= link_to "Create new Passenger", new_passenger_path if @flight.passenger == nil %>
   <%= link_to @flight.passenger.name, @flight.passenger %>
 </p>
 
