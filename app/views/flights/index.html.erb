@@ -20,7 +20,7 @@
     <td><%= flight.arrival %></td>
     <td><%= flight.arrival_time %></td>
     <td><%= flight.isinter %></td>
-    <td><%= link_to flight.passenger.name, flight.passenger%></td>
+    <td><%= link_to flight.passenger.name, flight.passenger if flight.passenger != nil %></td>
     <td><%= link_to 'Show', flight %></td>
     <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
     <td><%= link_to 'Destroy', flight, confirm: 'Are you sure?', method: :delete %></td>

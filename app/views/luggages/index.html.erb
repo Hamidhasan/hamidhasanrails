@@ -16,7 +16,7 @@
     <td><%= luggage.description %></td>
     <td><%= luggage.weight %></td>
     <td><%= luggage.sizetype %></td>
-    <td><%= link_to luggage.passenger.name, luggage.passenger %></td>
+    <td><%= link_to luggage.passenger.name, luggage.passenger if luggage.passenger != nil %></td>
     <td><%= link_to 'Show', luggage %></td>
     <td><%= link_to 'Edit', edit_luggage_path(luggage) %></td>
     <td><%= link_to 'Destroy', luggage, confirm: 'Are you sure?', method: :delete %></td>
