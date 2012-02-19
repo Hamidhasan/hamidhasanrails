@@ -20,13 +20,13 @@
     <%= f.text_field :weight, class: 'input-text' %>
   </div>
   <div class="field">
-    <%= f.label :type %><br />
-    <%= f.radio_button(:type, "Carry-on") %>
-    <%= f.label :type %><br />
-    <%= f.radio_button(:type, "Regular") %>
+    <%= f.label :type, "Type: Carry-on" %>
+    <%= f.radio_button(:sizetype, "Carry-on") %>
+    <%= f.label :type, "Regular" %>
+    <%= f.radio_button(:sizetype, "Regular") %>
   </div>
   <div class="field">
-    <%= f.label :passenger %><br />
+    <%= f.label :passenger %>
     <%= f.collection_select :passenger_id, Passenger.all, :id, :name %>
   </div>
   <div class="actions">
