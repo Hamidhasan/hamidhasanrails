@@ -18,7 +18,7 @@
 <p>
   <b>Passenger:</b>
   <%= link_to "Create new Passenger", new_passenger_path if @luggage.passenger == nil %>
-  <%= @luggage.passenger.name %>
+  <%= link_to @luggage.passenger.name, @luggage.passenger unless @luggage.passenger == nil %>
 </p>
 
 

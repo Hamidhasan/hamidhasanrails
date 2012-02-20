@@ -620,8 +620,7 @@
 
 	.small + small.error { width: 140px; }
 	.medium + small.error { width: 260px; }
-	.large + small.error { width: 440px; }
-	
+	.large + small.error { width: 440px; }	
 
 	/* -----------------------------------------
 	   Nicer Forms
