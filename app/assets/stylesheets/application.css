@@ -12,4 +12,6 @@
  *= require_self 
 */
 
-.datetime.optional {display: inline;}
+.datetime.optional {
+    display: inline;
+    }
