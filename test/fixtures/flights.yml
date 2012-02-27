@@ -5,11 +5,11 @@ one:
   arrival_time: 2012-02-12 22:58:07
   departure: MyString
   departure_time: 2012-02-12 22:58:07
-  passenger: 
+  passenger: testPassenger
 
 two:
-  arrival: MyString
+  arrival: arrTwo
   arrival_time: 2012-02-12 22:58:07
-  departure: MyString
+  departure: deptTwo
   departure_time: 2012-02-12 22:58:07
-  passenger: 
+  passenger: testPassenger

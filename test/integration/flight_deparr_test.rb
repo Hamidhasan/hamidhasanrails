@@ -10,7 +10,7 @@ class FlightDeparrTest < ActionDispatch::IntegrationTest
      click_button "Create Flight"
      
      error_message = "Departure is too short (minimum is 3 characters)"
-     asset page.has_content?(error_message)
+     assert page.has_content?(error_message)
    end
    
   test "arrival_length" do
@@ -22,6 +22,6 @@ class FlightDeparrTest < ActionDispatch::IntegrationTest
      click_button "Create Flight"
      
      error_message = "Arrival is too short (minimum is 3 characters)"
-     asset page.has_content?(error_message)
+     assert page.has_content?(error_message)
    end   
 end
