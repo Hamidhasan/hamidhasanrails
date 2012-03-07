@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PassengerTest < ActiveSupport::TestCase
   test "username format" do
-    myPerson = {name: "1234", email: "test@test.com"}
+    myPerson = {name: "1234", email: "testing@test.com"}
     passenger = Passenger.new(myPerson)
     assert !passenger.valid?
   end

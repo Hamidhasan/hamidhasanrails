@@ -8,8 +8,8 @@ class Passenger < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   has_many :luggage
   has_many :flight
-   validates :name, :uniqueness => true
-   validates :name, :format => { :with => /[a-zA-Z\s]/,
+  validates :name, :uniqueness => true
+  validates :name, :format => { :with => /[a-zA-Z\s]/,
        :message => " - Only letters (and spaces) allowed" }
   validates :email, :uniqueness => true
 end
