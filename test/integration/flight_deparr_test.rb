@@ -1,6 +1,19 @@
 require 'test_helper'
 
 class FlightDeparrTest < ActionDispatch::IntegrationTest
+  
+  setup do
+    @hamid = Passenger.create(
+      email: "hamidhasan14@gmail.com",
+      password: "testingrails" ,
+      password_confirmation: "testingrails"
+      )
+      visit new_passenger_session_path
+      fill_in 'Email', with: 'hamidhasan14@gmail.com'
+      fill_in 'Password', with: 'testingrails'
+      click_button 'Sign in'
+      
+  end
   test "departure_length" do
     
      visit flights_path

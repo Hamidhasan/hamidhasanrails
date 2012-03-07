@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hamidhasanrails</title>
+  <title>Travel Recorder</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,11 @@
 
 <div class = "container"> 
     <%= yield %>
+    <% if passenger_signed_in? %>
+    <%= link_to 'Logout', destory_passenger_session_path, method: :delete %>
+    <% end %>
 </div>
+
 
 </body>
 </html>
