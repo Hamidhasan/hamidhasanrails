@@ -4,7 +4,7 @@ class PassengerTest < ActiveSupport::TestCase
   test "username format" do
     myPerson = {name: "1234", email: "test@test.com"}
     passenger = Passenger.new(myPerson)
-    assert passenger.valid?
+    assert !passenger.valid?
   end
   
   test "username uniqueness" do
