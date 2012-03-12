@@ -11,7 +11,10 @@
 <div class = "container"> 
     <%= yield %>
     <% if passenger_signed_in? %>
-    <%= link_to 'Logout', destroy_passenger_session_path, method: :delete %>
+    
+    <br /><%= "Logged in as "%>
+    <%= link_to current_passenger.name, current_passenger %><br />
+    <%= link_to 'Logout', destroy_passenger_session_path, method: :delete, class: 'small nice red radius button' %>
     <% end %>
 </div>
 
