@@ -44,6 +44,7 @@ class FlightsController < ApplicationController
 
     respond_to do |format|
       if @flight.save
+        Notifications.new_flight(@flight).deliver
         format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
         format.json { render json: @flight, status: :created, location: @flight }
       else

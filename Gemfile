@@ -21,6 +21,10 @@ group :development, :test do
   gem 'capybara_rails'
 end
 
+group :development do
+  gem 'letter_opener'
+end
+
 group :production do
   gem 'pg'
 end
