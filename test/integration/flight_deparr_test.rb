@@ -3,6 +3,7 @@ require 'test_helper'
 class FlightDeparrTest < ActionDispatch::IntegrationTest
   
   setup do
+    javascript
     @hamid = Passenger.create(
       email: "hamidhasan14@gmail.com",
       password: "testingrails" ,
