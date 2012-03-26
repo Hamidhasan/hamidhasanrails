@@ -1,6 +1,7 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), 
+html: {class: "nice"}) do |f| %>
   <%= devise_error_messages! %>
   
   <div><%= f.label :name %><br />
@@ -15,7 +16,7 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", class: 'medium nice blue radius button' %></div>
 <% end %>
 
 <%= render "links" %>
