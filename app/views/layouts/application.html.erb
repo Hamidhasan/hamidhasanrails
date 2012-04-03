@@ -10,31 +10,32 @@
 
 <div class = "container"> 
     <% if passenger_signed_in? %>
-   <div class="row">
-      <div class="ten columns">
-        <%= yield %>
-      </div>
-      <div class="two columns">
-        <br />
-        <div id="sidebar">
-          <%= button_to 'Create New Flight', new_flight_path, 
-          class: 'small nice blue radius button', :method => :get %>
-        <%= "Logged in as: "%><br />
-        <%= link_to current_passenger.name, current_passenger %><br />
-        <%= link_to 'Logout', destroy_passenger_session_path, method: :delete, class: 'small nice red radius button' %>
-        <% end %>
-        </div>
-        <div id="hidetext">
-          <button class="small nice white radius button">Toggle</button>
-        </div>
-        <script>
-            $("#hidetext").click(function() {
-              $("#sidebar").fadeToggle("slow", "linear");
-            });
-        </script>
-      </div>
-       <% else %>
-        <%= yield %>
+       <div class="row">
+          <div class="ten columns">
+            <%= yield %>
+          </div>
+          <div class="two columns">
+            <br />
+            <div id="hidetext">
+              <button class="small nice white radius button">Toggle</button>
+            </div>
+            <br />
+            <div id="sidebar">
+              <%= button_to 'Create New Flight', new_flight_path, 
+              class: 'small nice blue radius button', :method => :get %>
+            <%= "Logged in as: "%><br />
+            <%= link_to current_passenger.name, current_passenger %><br />
+            <%= link_to 'Logout', destroy_passenger_session_path, method: :delete, class: 'small nice red radius button' %>
+            </div>
+            <script>
+                $("#hidetext").click(function() {
+                  $("#sidebar").fadeToggle("slow", "linear");
+                });
+            </script>
+          </div>
+    <% else %>
+     <%= yield %>
+    <% end %>
     </div>
 </div>
 
