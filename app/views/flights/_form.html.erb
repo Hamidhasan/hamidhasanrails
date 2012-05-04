@@ -1,4 +1,4 @@
-<%= form_for(@flight, html: {class: "nice custom"}) do |f| %>
+<%= form_for(@flight, html: {class: "nice"}) do |f| %>
   <% if @flight.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
@@ -24,14 +24,14 @@
     <%= f.text_field :arrival, class: 'input-text' %>
   </div>
   <div class="datetime optional">
-      <div class="field">
-        <%= f.label :arrival_time %><br />
-        <%= f.datetime_select :arrival_time %>
-      </div>
+    <%= f.label :arrival_time %><br />
+    <%= f.datetime_select :arrival_time %>
   </div>
   <div class="field">
     <%= f.label "Is this an international flight?" %>
-    <%= f.check_box :isinter %>
+    <div class = "custom checkbox">
+       <%= f.check_box :isinter %> 
+    </div>
   </div>
   <div class="field">
     <%= f.label :passenger %>

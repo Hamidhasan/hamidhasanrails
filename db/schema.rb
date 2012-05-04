@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120307033337) do
+ActiveRecord::Schema.define(:version => 20120504020219) do
 
   create_table "flights", :force => true do |t|
     t.string   "arrival"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20120307033337) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "admin"
   end
 
   add_index "passengers", ["email"], :name => "index_passengers_on_email", :unique => true

@@ -1,8 +1,17 @@
 class FlightsController < ApplicationController
+  
+  def flights
+    if current_user.admin?
+      flights = Flight.all
+    else
+      flights = current_user.flights
+    end
+  end
+  
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    @flights = flights
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +22,7 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
-    @flight = Flight.find(params[:id])
+    @flight = current_user.flights.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +33,7 @@ class FlightsController < ApplicationController
   # GET /flights/new
   # GET /flights/new.json
   def new
-    @flight = Flight.new
+    @flight = current_user.flights.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +43,13 @@ class FlightsController < ApplicationController
 
   # GET /flights/1/edit
   def edit
-    @flight = Flight.find(params[:id])
+    @flight = current_user.flights.find(params[:id])
   end
 
   # POST /flights
   # POST /flights.json
   def create
-    @flight = Flight.new(params[:flight])
+    @flight = current_user.flights.build(params[:flight])
 
     respond_to do |format|
       if @flight.save

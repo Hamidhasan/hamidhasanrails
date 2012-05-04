@@ -16,3 +16,7 @@
 .datetime.optional select{
     display: inline;
     }
+    
+.radio.optional select{
+    display: inline;
+}

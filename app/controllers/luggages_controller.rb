@@ -1,8 +1,17 @@
 class LuggagesController < ApplicationController
+  
+  def luggages
+    if current_user.admin?
+      luggages = Luggage.all
+    else
+      luggages = current_user.luggages
+    end
+  end
+  
   # GET /luggages
   # GET /luggages.json
   def index
-    @luggages = Luggage.all
+    @luggages = luggages
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +22,7 @@ class LuggagesController < ApplicationController
   # GET /luggages/1
   # GET /luggages/1.json
   def show
-    @luggage = Luggage.find(params[:id])
+    @luggage = current_user.luggages.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +33,7 @@ class LuggagesController < ApplicationController
   # GET /luggages/new
   # GET /luggages/new.json
   def new
-    @luggage = Luggage.new
+    @luggage = current_user.luggages.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +43,13 @@ class LuggagesController < ApplicationController
 
   # GET /luggages/1/edit
   def edit
-    @luggage = Luggage.find(params[:id])
+    @luggage = current_user.luggages.find(params[:id])
   end
 
   # POST /luggages
   # POST /luggages.json
   def create
-    @luggage = Luggage.new(params[:luggage])
+    @luggage = current_user.luggages.build(params[:luggage])
 
     respond_to do |format|
       if @luggage.save
@@ -56,7 +65,7 @@ class LuggagesController < ApplicationController
   # PUT /luggages/1
   # PUT /luggages/1.json
   def update
-    @luggage = Luggage.find(params[:id])
+    @luggage = current_user.luggages.find(params[:id])
 
     respond_to do |format|
       if @luggage.update_attributes(params[:luggage])
@@ -72,7 +81,7 @@ class LuggagesController < ApplicationController
   # DELETE /luggages/1
   # DELETE /luggages/1.json
   def destroy
-    @luggage = Luggage.find(params[:id])
+    @luggage = current_user.luggages.find(params[:id])
     @luggage.destroy
 
     respond_to do |format|
