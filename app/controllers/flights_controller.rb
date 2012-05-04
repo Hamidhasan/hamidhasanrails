@@ -2,16 +2,16 @@ class FlightsController < ApplicationController
   
   def flights
     if current_passenger.admin?
-      flights = Flight.all
+      Flight
     else
-      flights = current_passenger.flights
+      current_passenger.flight
     end
   end
   
   # GET /flights
   # GET /flights.json
   def index
-    @flights = flights
+    @flights = flights.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,7 +22,7 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
-    @flight = current_passenger.flights.find(params[:id])
+    @flight = flights.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,7 +33,7 @@ class FlightsController < ApplicationController
   # GET /flights/new
   # GET /flights/new.json
   def new
-    @flight = current_passenger.flights.build
+    @flight = current_passenger.flight.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,13 +43,13 @@ class FlightsController < ApplicationController
 
   # GET /flights/1/edit
   def edit
-    @flight = current_passenger.flights.find(params[:id])
+    @flight = flights.find(params[:id])
   end
 
   # POST /flights
   # POST /flights.json
   def create
-    @flight = current_passenger.flights.build(params[:flight])
+    @flight = current_passenger.flight.build(params[:flight])
 
     respond_to do |format|
       if @flight.save
@@ -66,7 +66,7 @@ class FlightsController < ApplicationController
   # PUT /flights/1
   # PUT /flights/1.json
   def update
-    @flight = current_passenger.flights.find(params[:id])
+    @flight = flights.find(params[:id])
 
     respond_to do |format|
       if @flight.update_attributes(params[:flight])
@@ -82,7 +82,7 @@ class FlightsController < ApplicationController
   # DELETE /flights/1
   # DELETE /flights/1.json
   def destroy
-    @flight = current_passenger.flights.find(params[:id])
+    @flight = flights.find(params[:id])
     @flight.destroy
 
     respond_to do |format|

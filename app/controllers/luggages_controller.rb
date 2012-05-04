@@ -2,16 +2,16 @@ class LuggagesController < ApplicationController
   
   def luggages
     if current_passenger.admin?
-      luggages = Luggage.all
+      Luggage
     else
-      luggages = current_passenger.luggages
+      current_passenger.luggage
     end
   end
   
   # GET /luggages
   # GET /luggages.json
   def index
-    @luggages = luggages
+    @luggages = luggages.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,7 +22,7 @@ class LuggagesController < ApplicationController
   # GET /luggages/1
   # GET /luggages/1.json
   def show
-    @luggage = current_passenger.luggages.find(params[:id])
+    @luggage = luggages.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,7 +33,7 @@ class LuggagesController < ApplicationController
   # GET /luggages/new
   # GET /luggages/new.json
   def new
-    @luggage = current_passenger.luggages.build
+    @luggage = current_passenger.luggage.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,13 +43,13 @@ class LuggagesController < ApplicationController
 
   # GET /luggages/1/edit
   def edit
-    @luggage = current_passenger.luggages.find(params[:id])
+    @luggage = luggages.find(params[:id])
   end
 
   # POST /luggages
   # POST /luggages.json
   def create
-    @luggage = current_passenger.luggages.build(params[:luggage])
+    @luggage = current_passenger.luggage.build(params[:luggage])
 
     respond_to do |format|
       if @luggage.save
@@ -65,7 +65,7 @@ class LuggagesController < ApplicationController
   # PUT /luggages/1
   # PUT /luggages/1.json
   def update
-    @luggage = current_passenger.luggages.find(params[:id])
+    @luggage = luggages.find(params[:id])
 
     respond_to do |format|
       if @luggage.update_attributes(params[:luggage])
@@ -81,7 +81,7 @@ class LuggagesController < ApplicationController
   # DELETE /luggages/1
   # DELETE /luggages/1.json
   def destroy
-    @luggage = current_passenger.luggages.find(params[:id])
+    @luggage = luggages.find(params[:id])
     @luggage.destroy
 
     respond_to do |format|
