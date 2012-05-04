@@ -12,6 +12,7 @@
  *= require_self 
 */
 
-.datetime.optional {
+
+.datetime.optional select{
     display: inline;
     }

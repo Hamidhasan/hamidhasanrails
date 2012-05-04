@@ -27,18 +27,12 @@
             <%= link_to current_passenger.name, current_passenger %><br />
             <%= link_to 'Logout', destroy_passenger_session_path, method: :delete, class: 'small nice red radius button' %>
             </div>
-            <script>
-                $("#hidetext").click(function() {
-                  $("#sidebar").fadeToggle("slow", "linear");
-                });
-            </script>
           </div>
     <% else %>
      <%= yield %>
     <% end %>
     </div>
 </div>
-
 
 </body>
 </html>
