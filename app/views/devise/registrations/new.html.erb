@@ -5,16 +5,16 @@ html: {class: "nice"}) do |f| %>
   <%= devise_error_messages! %>
   
   <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+  <%= f.text_field :name, class: 'input-text' %></div>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <%= f.email_field :email, class: 'input-text' %></div>
 
   <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password, class: 'input-text' %></div>
 
   <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation, class: 'input-text' %></div>
 
   <div><%= f.submit "Sign up", class: 'medium nice blue radius button' %></div>
 <% end %>

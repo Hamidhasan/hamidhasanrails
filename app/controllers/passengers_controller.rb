@@ -1,20 +1,31 @@
 class PassengersController < ApplicationController
+  def passengers
+    if current_passenger.admin?
+      Passenger
+    else
+      Household.find(current_passenger.household_id).passenger
+    end
+  end
   
   # GET /passengers
   # GET /passengers.json
   def index
-    @passengers = Passenger.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @passengers }
+    if current_passenger.household_id == nil
+      redirect_to new_household_path
+    else
+      @passengers = passengers.all
+  
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @passengers }
+      end    
     end
   end
 
   # GET /passengers/1
   # GET /passengers/1.json
   def show
-    @passenger = Passenger.find(params[:id])
+    @passenger = passenger.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -57,7 +68,7 @@ class PassengersController < ApplicationController
   # PUT /passengers/1
   # PUT /passengers/1.json
   def update
-    @passenger = Passenger.find(params[:id])
+    @passenger = passenger.find(params[:id])
 
     respond_to do |format|
       if @passenger.update_attributes(params[:passenger])
@@ -73,7 +84,7 @@ class PassengersController < ApplicationController
   # DELETE /passengers/1
   # DELETE /passengers/1.json
   def destroy
-    @passenger = Passenger.find(params[:id])
+    @passenger = passenger.find(params[:id])
     @passenger.destroy
 
     respond_to do |format|

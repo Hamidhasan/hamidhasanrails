@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Address</th>
-    <th></th>
+    <th>Members</th>
     <th></th>
     <th></th>
   </tr>
@@ -11,14 +11,15 @@
 <% @households.each do |household| %>
   <tr>
     <td><%= household.address %></td>
-    <td><%= link_to 'Show', household %></td>
-    <td><%= link_to 'Edit', edit_household_path(household) %></td>
-    <td><%= link_to 'Destroy', household, confirm: 'Are you sure?', method: :delete %></td>
-    
     <td><% household.passenger.each do |passenger| %>
     <%= link_to passenger.name, passenger %>
     <%= ", " unless passenger == household.passenger.last %>
     <% end %></td>
+    <td><%= link_to 'Show', household %></td>
+    <td><%= link_to 'Edit', edit_household_path(household) %></td>
+    <td><%= link_to 'Destroy', household, confirm: 'Are you sure?', method: :delete %></td>
+    
+
     
   </tr>
 <% end %>

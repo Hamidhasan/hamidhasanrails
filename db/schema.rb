@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504183519) do
+ActiveRecord::Schema.define(:version => 20120505004553) do
 
   create_table "flights", :force => true do |t|
     t.string   "arrival"
@@ -58,9 +58,11 @@ ActiveRecord::Schema.define(:version => 20120504183519) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin"
+    t.integer  "household_id"
   end
 
   add_index "passengers", ["email"], :name => "index_passengers_on_email", :unique => true
+  add_index "passengers", ["household_id"], :name => "index_passengers_on_household_id"
   add_index "passengers", ["reset_password_token"], :name => "index_passengers_on_reset_password_token", :unique => true
 
 end

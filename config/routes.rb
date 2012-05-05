@@ -2,6 +2,8 @@ Hamidhasanrails::Application.routes.draw do
   devise_for :passengers
 
   resources :luggages
+  
+  resources :households
 
   resources :flights
 

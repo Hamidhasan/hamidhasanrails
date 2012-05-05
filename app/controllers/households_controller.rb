@@ -44,8 +44,8 @@ class HouseholdsController < ApplicationController
 
     respond_to do |format|
       if @household.save
-        @household.passenger.add[current_passenger]
-        @household.save
+        current_passenger.household_id = @household.id
+        current_passenger.save
         format.html { redirect_to @household, notice: 'Household was successfully created.' }
         format.json { render json: @household, status: :created, location: @household }
       else
