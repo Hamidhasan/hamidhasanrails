@@ -35,7 +35,7 @@
   </div>
   <div class="field">
     <%= f.label :passenger %>
-    <%= f.collection_select :passenger_id, Household.find(current_passenger.household_id).passenger, :id, :name %>
+    <%= f.collection_select :passenger_id, currentHouse.passenger, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit class: 'medium nice blue radius button' %>

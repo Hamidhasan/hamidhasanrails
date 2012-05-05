@@ -5,4 +5,8 @@ class Household < ActiveRecord::Base
   validates :address, :uniqueness => true
   
   accepts_nested_attributes_for :passenger
+  
+  def currentHouse
+    Household.find(current_passenger.household_id)
+  end
 end

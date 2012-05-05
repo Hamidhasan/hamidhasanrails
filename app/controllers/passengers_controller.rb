@@ -3,7 +3,7 @@ class PassengersController < ApplicationController
     if current_passenger.admin?
       Passenger
     else
-      Household.find(current_passenger.household_id).passenger
+      currentHouse.passenger
     end
   end
   
