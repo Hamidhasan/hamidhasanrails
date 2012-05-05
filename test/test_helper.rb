@@ -15,7 +15,7 @@ class ActiveSupport::TestCase
     def login
       Passenger.create(email: 'hamidhasan14@gmail.com',
                   password: 'test1234')
-      visit new_user_session_path
+      visit new_passenger_session_path
       fill_in 'Email', with: 'hamidhasan14@gmail.com'
       fill_in 'Password', with: 'test1234'
       click_button 'Sign in'

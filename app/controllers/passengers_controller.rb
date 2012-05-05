@@ -25,7 +25,7 @@ class PassengersController < ApplicationController
   # GET /passengers/1
   # GET /passengers/1.json
   def show
-    @passenger = passenger.find(params[:id])
+    @passenger = passengers.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -69,7 +69,7 @@ class PassengersController < ApplicationController
   # PUT /passengers/1
   # PUT /passengers/1.json
   def update
-    @passenger = passenger.find(params[:id])
+    @passenger = passengers.find(params[:id])
 
     respond_to do |format|
       if @passenger.update_attributes(params[:passenger])
@@ -85,7 +85,7 @@ class PassengersController < ApplicationController
   # DELETE /passengers/1
   # DELETE /passengers/1.json
   def destroy
-    @passenger = passenger.find(params[:id])
+    @passenger = passengers.find(params[:id])
     @passenger.destroy
 
     respond_to do |format|
