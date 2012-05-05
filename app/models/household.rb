@@ -6,7 +6,4 @@ class Household < ActiveRecord::Base
   
   accepts_nested_attributes_for :passenger
   
-  def currentHouse
-    Household.find(current_passenger.household_id)
-  end
 end
