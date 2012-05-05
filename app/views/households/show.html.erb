@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Address:</b>
+  <%= @household.address %>
+</p>
+
+<p>
+  <b>Household members:</b>
+    <% @household.passenger.each do |passenger| %>
+        <%= link_to passenger.name, passenger %>
+        <%= ", " unless passenger == @household.passenger.last %>
+        <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_household_path(@household) %> |
+<%= link_to 'Back', households_path %>

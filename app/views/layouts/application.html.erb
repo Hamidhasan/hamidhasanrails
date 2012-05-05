@@ -23,6 +23,8 @@
             <div id="sidebar">
               <%= button_to 'Create New Flight', new_flight_path, 
               class: 'small nice blue radius button', :method => :get %>
+              <%= button_to 'Create New Luggage', new_luggage_path, 
+              class: 'small nice blue radius button', :method => :get %>
             <%= "Logged in as: "%><br />
             <%= link_to current_passenger.name, current_passenger %><br />
             <%= link_to 'Logout', destroy_passenger_session_path, method: :delete, class: 'small nice red radius button' %>

@@ -16,7 +16,7 @@
         <%= link_to luggage.description, luggage %>
         <%= ", " unless luggage == @passenger.luggage.last %>
         <% end %>
-    <%= button_to "Create new Luggage", new_luggage_path, class: 'small nice blue radius button' %>
+    <%= button_to "Create new Luggage", new_luggage_path, class: 'small nice blue radius button', :method => :get %>
 </p>
 
 <p>
@@ -25,7 +25,7 @@
         <%= link_to flight.departure, flight %>
         <%= ", " unless flight == @passenger.flight.last %>
         <% end %>
-    <%= button_to "Create new Flight", new_flight_path, class: 'small nice blue radius button' %>
+    <%= button_to "Create new Flight", new_flight_path, class: 'small nice blue radius button', :method => :get %>
 </p>
 
 
