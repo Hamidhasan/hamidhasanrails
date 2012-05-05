@@ -10,4 +10,20 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  
+  class ActionDispatch::IntegrationTest
+    def login
+      Passenger.create(email: 'hamidhasan14@gmail.com',
+                  password: 'test1234')
+      visit new_user_session_path
+      fill_in 'Email', with: 'hamidhasan14@gmail.com'
+      fill_in 'Password', with: 'test1234'
+      click_button 'Sign in'
+    end
+  
+    def logout
+      click_link "Logout"
+    end
+  end
+  
 end

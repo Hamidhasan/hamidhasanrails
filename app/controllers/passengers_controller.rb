@@ -56,6 +56,7 @@ class PassengersController < ApplicationController
 
     respond_to do |format|
       if @passenger.save
+        @passenger.household_id = current_passenger.household_id
         format.html { redirect_to @passenger, notice: 'Passenger was successfully created.' }
         format.json { render json: @passenger, status: :created, location: @passenger }
       else

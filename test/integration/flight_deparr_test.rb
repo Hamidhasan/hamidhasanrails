@@ -1,20 +1,12 @@
 require 'test_helper'
 
 class FlightDeparrTest < ActionDispatch::IntegrationTest
+  javascript
   
   setup do
-    javascript
-    @hamid = Passenger.create(
-      email: "hamidhasan14@gmail.com",
-      password: "testingrails" ,
-      password_confirmation: "testingrails"
-      )
-      visit new_passenger_session_path
-      fill_in 'Email', with: 'hamidhasan14@gmail.com'
-      fill_in 'Password', with: 'testingrails'
-      click_button 'Sign in'
-      
+    login
   end
+  
   test "departure_length" do
     
      visit flights_path
@@ -37,5 +29,5 @@ class FlightDeparrTest < ActionDispatch::IntegrationTest
      
      error_message = "Arrival is too short (minimum is 3 characters)"
      assert page.has_content?(error_message)
-   end   
+   end
 end
